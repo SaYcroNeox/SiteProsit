@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Légales</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>📜 Mentions Légales</h1>
+    </header>
+    <main>
+        <section class="card">
+            <h2>🏢 Informations sur l'entreprise</h2>
+            <p><strong>Nom :</strong> Web4All</p>
+            <p><strong>Adresse :</strong> 90 Tixeraine, Alger, Algérie</p>
+            <p><strong>Contact :</strong> +213 770717394</p>
+        </section>
+
+        <section class="card">
+            <h2>🍪 Politique des Cookies</h2>
+            <p>Ce site utilise des cookies pour améliorer votre expérience de navigation.</p>
+            <button id="openModalButton" class="button">Voir les mentions légales complètes</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Web4All - Tous droits réservés.</p>
+    </footer>
+
+    <!-- Modale des mentions légales -->
+    <div id="modal" class="modal">
+        <article class="modal-container">
+            <header class="modal-container-header">
+                <span class="modal-container-title">Mentions Légales</span>
+                <button id="closeModalButton" class="icon-button">
+                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" fill="currentColor"></path>
+                    </svg>
+                </button>
+            </header>
+            <section id="modalContent" class="modal-container-body rtf">
+                <!-- Le contenu des termes et conditions sera injecté ici via JavaScript -->
+            </section>
+            <footer class="modal-container-footer">
+                <button id="acceptButton" class="button is-primary">Accepter</button>
+                <button id="declineButton" class="button is-ghost">Refuser</button>
+            </footer>
+        </article>
+    </div>
+
+    <script>
+        // Ouverture de la modale
+        document.getElementById("openModalButton").addEventListener("click", function() {
+            const modalContent = `
+                <h2>Termes et Conditions d'Utilisation</h2>
+                <p><strong>Dernière mise à jour :</strong> 03 Fevrier 2025</p>
+                <p>Bienvenue sur LeBonPlan. En utilisant ce Site, vous acceptez les présentes conditions d'utilisation. Veuillez les lire attentivement. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser ce Site.</p>
+                
+                <h3>1. Acceptation des Conditions</h3>
+                <p>En accédant ou en utilisant ce Site, vous acceptez d'être lié par les présentes conditions d'utilisation, y compris toutes les modifications futures apportées à celles-ci. Nous nous réservons le droit de mettre à jour ces conditions à tout moment, sans préavis. Il vous incombe de consulter régulièrement ces conditions.</p>
+                
+                <h3>2. Utilisation du Site</h3>
+                <p>Vous êtes autorisé à utiliser le Site pour des fins légales uniquement et conformément aux présentes conditions d'utilisation. Vous vous engagez à ne pas utiliser le Site de manière à enfreindre la législation applicable, ou à compromettre la sécurité, l'intégrité ou la disponibilité du Site.</p>
+                <ul>
+                    <li>Violer les lois locales, nationales ou internationales en vigueur.</li>
+                    <li>Utiliser des moyens automatisés pour accéder au Site, tels que des robots ou des crawlers.</li>
+                    <li>Télécharger, publier ou transmettre des contenus nuisibles, diffamatoires, obscènes ou illégaux.</li>
+                    <li>Tenter d'accéder à des parties du Site non autorisées ou compromettre la sécurité du Site.</li>
+                </ul>
+
+                <h3>3. Propriété Intellectuelle</h3>
+                <p>Tous les contenus présents sur le Site, y compris, mais sans s'y limiter, les textes, images, graphiques, logos, vidéos, icônes, et logiciels sont la propriété de notre Site ou de ses partenaires et sont protégés par les lois sur la propriété intellectuelle.</p>
+                <p>Aucune partie du contenu du Site ne peut être reproduite, distribuée, modifiée, publiée ou autrement utilisée sans l'autorisation préalable écrite de .</p>
+
+                <h3>4. Inscription et Comptes Utilisateurs</h3>
+                <p>Certaines fonctionnalités du Site peuvent nécessiter une inscription. Lors de votre inscription, vous vous engagez à fournir des informations exactes et complètes et à mettre à jour ces informations si elles changent.</p>
+                <p>Vous êtes responsable de la confidentialité de vos informations de compte et de toutes les activités menées sous votre compte.</p>
+
+                <h3>5. Politique de Confidentialité</h3>
+                <p>Nous nous engageons à protéger votre vie privée. Notre politique de confidentialité, qui décrit la manière dont nous collectons et utilisons vos informations personnelles, est disponible sur [lien vers la politique de confidentialité].</p>
+
+                <h3>6. Cookies</h3>
+                <p>Le Site utilise des cookies pour améliorer votre expérience. Vous pouvez configurer votre navigateur pour refuser les cookies, mais cela peut affecter votre expérience sur le Site.</p>
+
+                <h3>7. Limitations de Responsabilité</h3>
+                <p>Le Site est fourni "tel quel" et "selon la disponibilité". Nous ne garantissons pas que le Site sera ininterrompu, sécurisé ou exempt d'erreurs. Nous ne sommes pas responsables des dommages directs, indirects, spéciaux ou consécutifs résultant de votre utilisation du Site.</p>
+
+                <h3>8. Liens Externes</h3>
+                <p>Le Site peut contenir des liens vers des sites web tiers. Ces liens sont fournis pour votre convenance, mais nous n'avons aucun contrôle sur leur contenu.</p>
+
+                <h3>9. Modifications des Conditions</h3>
+                <p>Nous nous réservons le droit de modifier ces conditions à tout moment. Vous serez informé de ces modifications par la publication des nouvelles conditions sur le Site.</p>
+
+                <h3>10. Résiliation</h3>
+                <p>Nous nous réservons le droit de suspendre ou de résilier votre accès au Site en cas de violation de ces conditions d'utilisation.</p>
+
+                <h3>11. Loi Applicable</h3>
+                <p>Les présentes conditions d'utilisation sont régies par les lois de l'Algerie.</p>
+
+                <h3>12. Contact</h3>
+                <p>Si vous avez des questions concernant ces conditions, veuillez nous contacter à l'adresse suivante : lebonplan@gmail.com.</p>
+
+                <p>En utilisant ce Site, vous acceptez ces conditions d'utilisation.</p>
+            `;
+
+            document.getElementById("modalContent").innerHTML = modalContent;
+            document.getElementById("modal").style.display = "flex";
+        });
+
+        // Fermeture de la modale
+        document.getElementById("closeModalButton").addEventListener("click", function() {
+            document.getElementById("modal").style.display = "none";
+        });
+
+        // Actions lors de l'acceptation ou du refus
+        document.getElementById("acceptButton").addEventListener("click", function() {
+            localStorage.setItem("cookiesAccepted", "true");
+            document.getElementById("modal").style.display = "none";
+        });
+
+        document.getElementById("declineButton").addEventListener("click", function() {
+            localStorage.setItem("cookiesAccepted", "false");
+            document.getElementById("modal").style.display = "none";
+        });
+    </script>
+</body>
+</html>

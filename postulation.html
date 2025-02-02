@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postuler</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>📄 Postuler à une offre de stage</h1>
+</header>
+<main>
+    <div class="form-container">
+        <h2>🚀 Déposez votre candidature</h2>
+        <p class="form-description">Remplissez ce formulaire pour soumettre votre candidature. Nous vous contacterons si votre profil correspond.</p>
+
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <div class="input-group">
+                <label for="cv">📂 CV (PDF, DOCX) :</label>
+                
+                <!-- Input file (caché après sélection) -->
+                <input type="file" id="cv" name="cv" accept=".pdf,.docx" required>
+
+                <!-- Conteneur du fichier sélectionné -->
+                <div id="file-container" class="file-container">
+                    <span id="file-icon" class="file-icon"></span>
+                    <span id="file-name" class="file-name"></span>
+                    <button id="preview-btn" class="preview-btn">Aperçu</button>
+                    <span id="remove-file" class="remove-file">&#x2716;
+                    </span>
+                </div>
+
+                <p style="font-size: 14px; color: gray; margin-top: 5px;">📌 Taille maximale : 2 Mo</p>
+            </div>
+
+            <div class="input-group">
+                <label for="nom">👤 Nom :</label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+            </div>
+
+            <div class="input-group">
+                <label for="prenom">👤 Prénom :</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">📧 Email :</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="message">✍️ Message :</label>
+                <textarea id="message" name="message" rows="5" placeholder="Expliquez vos motivations..." required></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="civilite">👥 Civilité :</label>
+                <select id="civilite" name="civilite" required>
+                    <option value="homme">Homme</option>
+                    <option value="femme">Femme</option>
+                    <option value="Helicoptère">Hélicoptère</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="vehicule">🚗 Véhicule :</label>
+                <div>
+                    <label for="vehiculeOui"><input type="checkbox" id="vehiculeOui" name="vehicule" value="oui"> Oui</label>
+                    <label for="vehiculeNon"><input type="checkbox" id="vehiculeNon" name="vehicule" value="non"> Non</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">📨 Envoyer la candidature</button>
+        </form>
+    </div>
+</main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const cvInput = document.getElementById("cv");
+        const fileContainer = document.getElementById("file-container");
+        const fileIcon = document.getElementById("file-icon");
+        const fileName = document.getElementById("file-name");
+        const previewBtn = document.getElementById("preview-btn");
+        const removeFile = document.getElementById("remove-file");
+
+        // Gérer la sélection du fichier
+        cvInput.addEventListener("change", function () {
+            const file = cvInput.files[0];
+
+            if (file) {
+                const fileType = file.name.split('.').pop().toLowerCase();
+
+                // Déterminer l'icône en fonction du type de fichier
+                if (fileType === "pdf") {
+                    fileIcon.innerHTML = "📂";
+                } else if (fileType === "docx") {
+                    fileIcon.innerHTML = "📄";
+                } else {
+                    fileIcon.innerHTML = "❌";
+                }
+
+                fileName.textContent = file.name; // Affichage du nom du fichier
+                previewBtn.style.display = "inline-block"; // Afficher le bouton Aperçu
+
+                // Afficher le conteneur et cacher l'input
+                fileContainer.style.display = "flex";
+                cvInput.classList.add("hidden");
+            }
+        });
+
+        // Gérer la suppression du fichier sélectionné
+        removeFile.addEventListener("click", function () {
+            cvInput.value = ""; // Réinitialiser l'input file
+            fileContainer.style.display = "none"; // Cacher l'affichage
+            cvInput.classList.remove("hidden"); // Réafficher l'input
+            previewBtn.style.display = "none"; // Cacher le bouton Aperçu
+        });
+
+        // Aperçu du fichier dans un nouvel onglet
+        previewBtn.addEventListener("click", function () {
+            if (cvInput.files.length > 0) {
+                const file = cvInput.files[0];
+                const fileURL = URL.createObjectURL(file);
+                window.open(fileURL, "_blank"); // Ouvre le fichier dans un nouvel onglet
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

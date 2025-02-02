@@ -1,0 +1,394 @@
+/* Styles généraux */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E3F2FD;
+    color: #333;
+}
+
+/* En-tête */
+header {
+    background-color: #0D47A1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Contenu principal */
+main {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cartes de section */
+.card {
+    background-color: white;
+    max-width: 600px;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Titres des sections */
+.card h2 {
+    color: #0D47A1;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* Pied de page */
+footer {
+    background-color: #0D47A1;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================= */
+/*        FORMULAIRE POSTULE     */
+/* ============================= */
+
+/* Conteneur du formulaire */
+.form-container {
+    background-color: white;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Titres */
+h2 {
+    color: #0D47A1;
+    font-size: 24px;
+}
+
+.form-description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Champs du formulaire */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #0D47A1;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus, textarea:focus {
+    border-color: #0D47A1;
+    outline: none;
+    box-shadow: 0 0 5px rgba(13, 71, 161, 0.5);
+}
+
+/* Bouton d'envoi */
+.btn-submit {
+    background: linear-gradient(135deg, #0D47A1, #1565C0);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, #1565C0, #1976D2);
+    transform: scale(1.05);
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================= */
+/*       BANNIÈRE COOKIES        */
+/* ============================= */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.cookie-banner p {
+    margin: 0;
+    flex: 1;
+    padding-right: 15px;
+}
+
+.cookie-banner a {
+    color: #FFD700;
+    text-decoration: underline;
+}
+
+#accept-cookies {
+    background: #FFD700;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    position: relative;
+    left: -60px;
+}
+
+#accept-cookies:hover {
+    background: #FFC107;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Modale */
+.modal {
+    display: none; /* Cache la modale par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-container {
+    max-height: 80%;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 16px;
+    overflow-y: auto;
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-container-header {
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-container-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-container-body {
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.modal-container-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px;
+    border-top: 1px solid #ddd;
+}
+
+.button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid #007BFF;
+    color: #007BFF;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 120px;
+    
+}
+
+.button.is-primary {
+    background-color: #007BFF;
+    color: white;
+}
+
+.button.is-ghost {
+    background-color: transparent;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* Style du message d'erreur */
+ .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none; /* Par défaut, caché */
+}
+
+/* Conteneur du fichier sélectionné */
+.file-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    display: none; /* Caché par défaut */
+}
+
+/* Icône du fichier */
+.file-icon {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Nom du fichier */
+.file-name {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Bouton supprimer (croix) */
+.remove-file {
+    cursor: pointer;
+    font-size: 18px;
+    color: red;
+    font-weight: bold;
+}
+
+/* Bouton aperçu */
+.preview-btn {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none; /* Caché par défaut */
+}
+
+/* Masquer l'input file natif */
+.hidden {
+    display: none;
+}
